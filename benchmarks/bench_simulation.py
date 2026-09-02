@@ -18,7 +18,7 @@ from vesting_sim.engine.monte_carlo import MonteCarloSimulator
 def generate_synthetic_workforce(n: int) -> list[EquityGrant]:
     """Generates a realistic synthetic enterprise workforce equity portfolio."""
     schedules = list(ScheduleType)
-    types = [GrantType.GSU, GrantType.GSU, GrantType.GSU, GrantType.PSU]
+    types = [GrantType.RSU, GrantType.RSU, GrantType.RSU, GrantType.PSU]
     grants: list[EquityGrant] = []
 
     for i in range(n):

@@ -7,7 +7,7 @@
 [![Test Coverage: >95%](https://img.shields.io/badge/coverage-96%25-brightgreen.svg)]()
 [![Property Tested: Hypothesis](https://img.shields.io/badge/property--tested-Hypothesis-purple.svg)](https://hypothesis.readthedocs.io/)
 
-**VestingSim** is a financial compensation engine designed to model, simulate, and value enterprise equity grants (GSUs and PSUs) at scale using deterministic share allocation algorithms and parallelized Monte Carlo simulations.
+**VestingSim** is a financial compensation engine designed to model, simulate, and value enterprise equity grants (RSUs and PSUs) at scale using deterministic share allocation algorithms and parallelized Monte Carlo simulations.
 
 ---
 
@@ -16,7 +16,7 @@
 ```
 vesting-sim-engine/
 ├── .github/workflows/      # Automated CI matrix (Python 3.11, 3.12, 3.13)
-├── docs/                   # Google-standard design doc & mathematical models
+├── docs/                   # Enterprise-standard design doc & mathematical models
 ├── src/vesting_sim/
 │   ├── domain/             # Immutable value objects & deterministic schedules
 │   └── engine/             # Geometric Brownian Motion & parallel worker pool
@@ -42,12 +42,12 @@ from decimal import Decimal
 from vesting_sim.domain import EquityGrant, GrantType, ScheduleType
 from vesting_sim.engine import MonteCarloSimulator
 
-# Create a Google-style front-loaded grant (33/33/22/12)
+# Create a front-loaded enterprise grant (33/33/22/12)
 grant = EquityGrant(
     grant_id="G-101",
     employee_id="E-500",
     total_shares=1_000,
-    grant_type=GrantType.GSU,
+    grant_type=GrantType.RSU,
     schedule_type=ScheduleType.FRONT_LOADED_33_33_22_12,
     grant_price_usd=Decimal("175.00"),
 )

@@ -8,7 +8,7 @@
 
 ## 1. Context & Problem Statement
 
-At enterprise technology companies like Google, equity compensation (GSUs and PSUs) constitutes 30%–70% of total software engineering compensation. 
+At enterprise technology companies, equity compensation (RSUs and PSUs) constitutes 30%–70% of total engineering compensation. 
 
 Compensation planning teams, total rewards analysts, and HR leadership face two computational bottlenecks during annual merit and refresh cycles:
 1. **Financial Precision & Invariant Violations**: Floating-point math (`IEEE-754`) causes rounding drift and fraction-of-a-cent truncation when calculating fractional share vesting across thousands of employees.
@@ -20,7 +20,7 @@ Compensation planning teams, total rewards analysts, and HR leadership face two 
 
 ### Goals
 * **Deterministic Precision**: 100% exact financial math using `decimal.Decimal` and fixed-point representations.
-* **Flexible Vesting Strategies**: Out-of-the-box support for Standard 4-Year (25% cliff), Google-style Front-Loaded (33/33/22/12), Monthly Graded, and Performance-Multiplied (PSU) schedules.
+* **Flexible Vesting Strategies**: Out-of-the-box support for Standard 4-Year (25% cliff), Front-Loaded (33/33/22/12), Monthly Graded, and Performance-Multiplied (PSU) schedules.
 * **High-Throughput Concurrency**: Multi-process worker pool architecture capable of simulating 100,000 employee portfolios under Monte Carlo Brownian Motion in < 5 seconds.
 * **Property-Based Verification**: Formal verification via `Hypothesis` proving total vested shares strictly match grant limits ($\sum v_i = G$).
 
