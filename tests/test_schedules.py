@@ -11,7 +11,7 @@ class TestVestingSchedules(unittest.TestCase):
     """Test suite verifying mathematical invariants of vesting schedules."""
 
     def test_front_loaded_schedule_exact_conservation(self) -> None:
-        """Verifies Google 33/33/22/12 schedule distributes exactly 100% of shares."""
+        """Verifies enterprise 33/33/22/12 front-loaded schedule distributes exactly 100% of shares."""
         grant = EquityGrant(
             grant_id="G-101",
             employee_id="E-500",

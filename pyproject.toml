@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "vesting-sim-engine"
 version = "0.1.0"
-description = "High-Throughput Equity Vesting Simulation & Monte Carlo Valuation Engine in Google-Caliber Modern Python"
+description = "High-Throughput Equity Vesting Simulation & Monte Carlo Valuation Engine in Enterprise-Grade Modern Python"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
